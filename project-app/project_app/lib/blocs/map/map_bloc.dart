@@ -13,12 +13,16 @@ import 'package:project_app/widgets/widgets.dart';
 part 'map_event.dart';
 part 'map_state.dart';
 
+/// [MapBloc] gestiona el estado y la lógica relacionada con el mapa de la aplicación.
+///
+/// Este bloc se encarga de:
+/// - Dibujar polilíneas (rutas) y marcadores en el mapa.
+/// - Controlar la cámara del mapa (movimientos y zoom).
+/// - Seguir la ubicación del usuario.
+/// - Mostrar y ocultar rutas.
+/// - Administrar eventos relacionados con el mapa.
 class MapBloc extends Bloc<MapEvent, MapState> {
-  GoogleMapController? _mapController; // Controlador del mapa
-  final LocationBloc
-      locationBloc; // Bloc de ubicación para obtener la posición del usuario
-  StreamSubscription<LocationState>?
-      locationSubscription; // Suscripción al estado de ubicación
+ 
 
   LatLng? mapCenter; // Coordenadas del centro del mapa
 
